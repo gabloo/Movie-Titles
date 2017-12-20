@@ -40,6 +40,7 @@ def main():
     expectedTitleNumber = respDataJson['total']
 
     for i in range( 1, numberPages+1):
+        print("Status : processing page ", i)
         query = httpLink + "&page="+ str(i)
         respQuery = urllib.request.urlopen(query).read()
         respQueryJson = json.loads(respQuery)
